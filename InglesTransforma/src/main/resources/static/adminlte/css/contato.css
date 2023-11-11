@@ -1,0 +1,81 @@
+.contact .row {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+.contact .row .image {
+  flex: 1 1 50rem;
+}
+.contact .row .image img {
+  max-height: 70rem;
+  width: 100%;
+}
+.contact .row form {
+  border-radius: 0.5rem;
+  background-color: var(--white);
+  padding: 2rem;
+  flex: 1 1 30rem;
+  text-align: center;
+}
+.contact .row form h3 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: var(--black);
+}
+.contact .row form textarea {
+  height: 20rem;
+  resize: none;
+}
+.contact .row form .box {
+  width: 100%;
+  margin: 1rem 0;
+  border-radius: 0.5rem;
+  background-color: var(--light-bg);
+  padding: 1.4rem;
+  color: var(--black);
+  font-size: 1.8rem;
+}
+.contact .row form .btn {
+  width: -moz-fit-content;
+  width: fit-content;
+  margin-inline: auto;
+}
+
+.box-container {
+  margin-top: 3rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+.box-container .box {
+  border-radius: 0.5rem;
+  background-color: var(--white);
+  padding: 2rem;
+  flex: 1 1 30rem;
+  text-align: center;
+}
+.box-container .box i {
+  font-size: 3rem;
+  color: var(--dark-blue);
+  margin-bottom: 1rem;
+}
+.box-container .box h3 {
+  margin: 1.5rem 0;
+  font-size: 2rem;
+  color: var(--black);
+}
+.box-container .box a {
+  display: block;
+  margin-top: 1rem;
+  font-size: 1.7rem;
+  color: var(--light-color);
+  line-height: 1.5;
+  margin-top: 0.5rem;
+  transition: 0.2s ease-out;
+}
+.box-container .box a:hover {
+  text-decoration: underline !important;
+  color: var(--dark-blue);
+}/*# sourceMappingURL=contato.css.map */
