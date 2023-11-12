@@ -1,24 +1,21 @@
 package com.squad42.InglesTransforma.model;
 
 import java.util.Date;
-import java.util.List;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name= "Alunos")
-public class Aluno {
+@Table(name= "Professores")
+public class Professor {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
-	@ManyToOne
-	private Curso curso;
+	
 	@Column(nullable=false)
 	private String nome;
 	@Column(nullable=false)
@@ -33,11 +30,10 @@ public class Aluno {
 	private Date data_de_nascimento;
 	@Column(nullable=false)
 	private String sexo;
-	public Aluno(int id, Curso curso, String nome, String email, String senha, String cpf, String user_role,
+	public Professor(int id, String nome, String email, String senha, String cpf, String user_role,
 			Date data_de_nascimento, String sexo) {
 		super();
 		this.id = id;
-		this.curso=curso;
 		this.nome = nome;
 		this.email = email;
 		this.senha = senha;
@@ -46,7 +42,7 @@ public class Aluno {
 		this.data_de_nascimento = data_de_nascimento;
 		this.sexo = sexo;
 	}
-	public Aluno() {
+	public Professor() {
 		super();
 	}
 	public int getId() {
@@ -54,12 +50,6 @@ public class Aluno {
 	}
 	public void setId(int id) {
 		this.id = id;
-	}
-	public Curso  getCurso() {
-		return curso;
-	}
-	public void setCurso(Curso curso) {
-		this.curso=curso;
 	}
 	public String getNome() {
 		return nome;
@@ -104,5 +94,6 @@ public class Aluno {
 		this.sexo = sexo;
 	}
 	
-
+	
+	
 }
