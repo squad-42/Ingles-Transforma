@@ -1,0 +1,47 @@
+@import "../../styles/variables";
+
+.form-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 20rem);
+
+  form {
+    @include box(var(--white));
+    padding-top: 1rem;
+    width: 50rem;
+
+    h3 {
+      text-align: center;
+      font-size: $fs-25;
+      margin-block: 1rem;
+      color: var(--black);
+    }
+
+    label {
+      padding-top: 1rem;
+      font-size: $fs-17;
+      color: var(--light-color);
+
+      span {
+        color: $red;
+      }
+    }
+
+    .box {
+      width: 100%;
+      border-radius: .5rem;
+      margin: 1rem 0;
+      font-size: $fs-18;
+      color: var(--black);
+      padding: 1.4rem;
+      background-color: var(--light-bg);
+    }
+
+    .btn {
+      width: fit-content;
+      margin-top: 1.5rem;
+      margin-inline: auto;
+    }
+  }
+}

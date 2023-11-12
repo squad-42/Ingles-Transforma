@@ -1,17 +1,17 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
 
 <head>
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Contato</title>
-   <link rel="shortcut icon" href="../../assets/icons/favicon.png" type="image/x-icon">
+   <link rel="shortcut icon" href="/assets/icons/favicon.png" type="image/x-icon">
    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
       integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
-   <link rel="stylesheet" href="../../styles/styles.css">
-   <link rel="stylesheet" href="./contato.css">
+   <link rel="stylesheet" href="/css/styles.css">
+   <link rel="stylesheet" href="/css/contato.css">
 </head>
 
 <body>
@@ -28,9 +28,9 @@
       <section class="contact">
          <div class="row">
             <div class="image">
-               <img src="../../assets/imgs/contato.svg" alt="">
+               <img src="/assets/imgs/contato.svg" alt="">
             </div>
-            <form action="/contato" method="post" th:object="${contato}">
+            <form action="" method="post">
                <h3>Entrar em contato</h3>
                <input type="text" placeholder="Digite seu nome" name="name" required maxlength="50" class="box">
                <input type="email" placeholder="Digite seu email" name="email" required maxlength="50" class="box">
@@ -69,8 +69,8 @@
    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
       crossorigin="anonymous"></script>
-   <script src="./contato.js" type="module"></script>
-   <script src="../../scripts/functions.js" defer></script>
+   <script src="/js/contato.js" type="module"></script>
+   <script src="/js/functions.js" defer></script>
 </body>
 
 </html>

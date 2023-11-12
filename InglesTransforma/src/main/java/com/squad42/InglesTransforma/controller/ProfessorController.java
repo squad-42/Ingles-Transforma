@@ -6,8 +6,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
-@RequestMapping("/pages/contato/contato")
-public class ContatoController {
+@RequestMapping("/pages/professor/professor")
+public class ProfessorController {
 	
 	@GetMapping
 	public ModelAndView mostrar() {

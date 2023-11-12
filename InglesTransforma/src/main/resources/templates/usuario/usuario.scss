@@ -1,0 +1,161 @@
+@import "../../styles/variables";
+
+.details {
+  @include box(var(--white));
+
+  a {
+    width: fit-content;
+  }
+
+  .user {
+    text-align: center;
+    margin-bottom: 2rem;
+
+    img {
+      @include profileImage(10rem);
+      margin-bottom: .5rem;
+    }
+
+    h3 {
+      font-size: $fs-20;
+      margin: .5rem 0;
+      color: var(--black);
+    }
+
+    p {
+      font-size: $fs-17;
+      color: var(--light-color);
+      margin-bottom: .5rem;
+    }
+
+    a {
+      margin-inline: auto;
+    }
+
+  }
+
+
+  .box-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1.5rem;
+
+    .box {
+      background-color: var(--light-bg);
+      border-radius: .5rem;
+      padding: 2rem;
+      flex: 1 1 30rem;
+
+      .flex {
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+        margin-bottom: 1rem;
+
+        i {
+          height: 4.5rem;
+          width: 4.5rem;
+          border-radius: .5rem;
+          background-color: var(--black);
+          line-height: 4.4rem;
+          font-size: $fs-20;
+          text-align: center;
+          color: var(--white);
+        }
+
+        h3 {
+          font-size: $fs-20;
+          color: var(--dark-blue);
+          margin-bottom: .2rem;
+        }
+
+        span {
+          font-size: $fs-15;
+          color: var(--light-color);
+        }
+      }
+    }
+  }
+}
+
+#courses {
+  .box-container {
+    @include box-container(27.5rem);
+
+    .box {
+      @include box(var(--white));
+      height: 437px;
+
+      .tutor {
+        margin-bottom: 2.5rem;
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+
+        img {
+          @include profileImage(5rem);
+        }
+
+        h3 {
+          font-size: $fs-18;
+          color: var(--dark-blue);
+          margin-bottom: .2rem;
+        }
+
+        span {
+          font-size: $fs-13;
+          color: var(--black);
+        }
+      }
+
+      .thumb {
+        position: relative;
+
+        img {
+          width: 100%;
+          border-radius: .5rem;
+          height: 20rem;
+          object-fit: cover;
+        }
+
+        span {
+          position: absolute;
+          top: 1rem;
+          left: 1rem;
+          border-radius: .5rem;
+          padding: .5rem 1.5rem;
+          background-color: rgba(0, 0, 0, .3);
+          color: white;
+          font-size: 1.5rem;
+        }
+      }
+
+      .btn {
+        width: fit-content;
+      }
+
+      .title {
+        font-size: $fs-20;
+        color: var(--black);
+        margin-top: .5rem;
+        padding: .5rem 0;
+        height: 5.8rem;
+      }
+
+      .flex {
+        display: flex;
+        gap: 1.5rem;
+        margin-bottom: 1rem;
+
+        .btn {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  .btn {
+    width: fit-content;
+  }
+}
