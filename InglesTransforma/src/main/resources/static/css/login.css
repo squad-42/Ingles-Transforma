@@ -1,0 +1,42 @@
+.form-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 20rem);
+}
+.form-container form {
+  border-radius: 0.5rem;
+  background-color: var(--white);
+  padding: 2rem;
+  padding-top: 1rem;
+  width: 50rem;
+}
+.form-container form h3 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-block: 1rem;
+  color: var(--black);
+}
+.form-container form label {
+  padding-top: 1rem;
+  font-size: 1.7rem;
+  color: var(--light-color);
+}
+.form-container form label span {
+  color: hsl(6, 78%, 57%);
+}
+.form-container form .box {
+  width: 100%;
+  border-radius: 0.5rem;
+  margin: 1rem 0;
+  font-size: 1.8rem;
+  color: var(--black);
+  padding: 1.4rem;
+  background-color: var(--light-bg);
+}
+.form-container form .btn {
+  width: -moz-fit-content;
+  width: fit-content;
+  margin-top: 1.5rem;
+  margin-inline: auto;
+}/*# sourceMappingURL=login.css.map */

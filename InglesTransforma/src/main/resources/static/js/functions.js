@@ -8,6 +8,8 @@ const logo = body.querySelector("#logo")
 
 const darkMode = localStorage.getItem("dark-mode")
 
+console.log("teste")
+
 if (darkMode === "true") {
   enableDarkMode()
 }
