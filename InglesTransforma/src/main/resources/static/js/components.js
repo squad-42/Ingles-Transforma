@@ -10,21 +10,21 @@ console.log(user)
 const profile = (user, location) => {
   return user !== null ?
     `
-    <img src="../img/imgs/pic-${user.userPic}.jpg" alt="Foto de Perfil" class="object-fit-cover">
+    <img src="/img/imgs/pic-${user.userPic}.jpg" alt="Foto de Perfil" class="object-fit-cover">
     <h3 class="name">${user.name}</h3>
     <p class="role text-capitalize">${user.type}</p>
-    <a href="/usuario" class="btn d-block w-100 btn-dark-blue">Ver perfil</a>
+    <a href="../usuario/usuario" class="btn d-block w-100 btn-dark-blue">Ver perfil</a>
     ${location === "header" ? `
         <div class="d-flex gap-3 mt-3">
-          <a href="" class="btn btn-orange" onclick="logout()">Logout</a>
+          <a href="../home/index" class="btn btn-orange" onclick="logout()">Logout</a>
         </div>      
       ` : ``
     }
 ` : `
     <h3 class="name">Por favor logar ou registrar</h3>
     <div class="d-flex gap-3 mt-3">
-      <a href="/login" class="btn btn-orange">Login</a>
-      <a href="/cadastro" class="btn btn-orange">Registrar</a>
+      <a href="../login/login" class="btn btn-orange">Login</a>
+      <a href="../cadastro/cadastro" class="btn btn-orange">Registrar</a>
     </div>
 `
 }
@@ -34,14 +34,9 @@ export const navbar = () => {
   return `
   <section class="d-flex align-items-center justify-content-between position-relative section-header">
 
-      <a href="" class="logo">
-        <img src="../img/icons/logo-texto.svg" alt="Logotipo" width="80" id="logo">
-      </a>
-
-      <form action="" method="post" class="d-flex align-content-center search-form">
-        <input type="text" name="search_box" placeholder="Buscar cursos" maxlength="100" required>
-        <button type="submit" class="fas fa-search"></button>
-      </form>
+      <a href="../home/index" class="logo">
+        <img src="/img/icons/logo-texto.svg" alt="Logotipo" width="80" id="logo">
+      </a>     
 
       <div class="icons">
         <div class="fas fa-bars" id="menu-btn" data-bs-toggle="offcanvas" data-bs-target="#sidebar"></div>
@@ -61,7 +56,7 @@ export const sidebar = () => {
   let links = ""
   menuItens.map(({ icon, label, link }) => {
     links += `
-  <a href="/${link === "home" ? "" : link}"><i class="fas fa-${icon}"></i><span>${label}</span></a>
+  <a href="../${link}/${link === "home" ? "index" : link}"><i class="fas fa-${icon}"></i><span>${label}</span></a>
   `
   })
   if (user !== null) {
@@ -97,18 +92,18 @@ export const cardCurso = ({ cod, prof, profPic, date, numOfVid, thumb, course })
   return `
   <div class="box">
   <div class="tutor">
-    <img src="../img/imgs/pic-${profPic}.jpg" alt="">
+    <img src="/img/imgs/pic-${profPic}.jpg" alt="">
     <div class="info">
       <h3>${prof}</h3>
       <span>${date}</span>
     </div>
   </div>
   <div class="thumb">
-    <img src="../img/imgs/thumb-${thumb}.png" alt="">
+    <img src="/img/imgs/thumb-${thumb}.png" alt="">
     <span>${numOfVid} videos</span>
   </div>
   <h3 class="title">${course}</h3>
-  <a href="/aulas" class="btn btn-dark-blue" onclick="setCurso(${cod})">ver playslist</a>
+  <a href="../aulas/aulas" class="btn btn-dark-blue" onclick="setCurso(${cod})">ver playslist</a>
 </div>
   `
 }

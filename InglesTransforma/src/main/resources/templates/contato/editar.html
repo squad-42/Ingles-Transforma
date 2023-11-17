@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Contato</title>
+   <link rel="shortcut icon" href="/img/icons/favicon.png" type="image/x-icon">
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+   <link rel="stylesheet" href="/css/styles.css">
+   <link rel="stylesheet" href="/css/contato.css">
+</head>
+
+<body>
+
+   <header class="header">
+
+   </header>
+
+   <div class="sidebar">
+
+   </div>
+
+   <main>
+      <section class="contact">
+        <div class="row">
+			<div class="col-md-6">
+            <div class="image">
+               <img src="/img/imgs/contato.svg" alt="">
+            </div>
+            </div>
+            <div class="col-md-5">
+            <form id="contatoForm" method="POST" th:object="${contato}">
+			<input type="hidden" th:field="*{id}">
+               <h1 class="text-center">Editar contato</h1>
+               <div class="box">
+               <label for="nome">Nome:</label>
+               <input type="text" id="nome" placeholder="Digite seu nome" th:field="*{nome}" required maxlength="50">
+               </div>
+               
+               <div class="box">
+               <label for="email">Email:</label>
+               <input type="email" id="email" placeholder="Digite seu email" th:field="*{email}" required maxlength="50">
+               </div>
+               
+               <div class="box">
+               <label for="telefone">Telefone:</label>
+               <input type="number" placeholder="Digite seu número de telefone" th:field="*{telefone}" required maxlength="50">
+               </div>
+               
+               <div class="box">
+               <label for="mensagem">Mensagem:</label>
+               <textarea id="mensagem" th:field="*{mensagem}" placeholder="Escreva sua mensagem" required maxlength="1000" cols="30"
+                  rows="10"></textarea>
+               </div>
+               
+               <div class="box">
+               <input type="submit" value="Editar Mensagem" class="btn btn-dark-blue" name="submit">
+               </div>
+            </form>
+            </div>
+         </div>
+		</div> 
+		<div class="box-container">
+				<div class="box">
+					<i class="fas fa-phone"></i>
+					<h3>Número de Telefone</h3>
+					<a href="tel:123456789">+55 12345-6789</a>
+				</div>
+				<div class="box">
+					<i class="fas fa-envelope"></i>
+					<h3>Endereço de e-mail</h3>
+					<a href="mailto:squad42@gmail.com">squad42@gmail.com</a>
+				</div>
+				<div class="box">
+					<i class="fas fa-map-marker-alt"></i>
+					<h3>Endereço</h3>
+					<a href="#">Rua do Sucesso, nº 1.234 - Brasil</a>
+				</div>
+			</div>
+		
+      </section>
+   </main>
+   <!-- FOOTER -->
+
+   <footer>
+   </footer>
+
+   <!-- FOOTER -->
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+      crossorigin="anonymous"></script>
+   <script src="/js/contato.js" type="module"></script>
+   <script src="/js/functions.js" defer></script>
+</body>
+
+</html>

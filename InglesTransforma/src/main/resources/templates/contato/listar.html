@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Contato</title>
+   <link rel="shortcut icon" href="/img/icons/favicon.png" type="image/x-icon">
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+   <link rel="stylesheet" href="/css/styles.css">
+   <link rel="stylesheet" href="/css/contato.css">
+</head>
+
+<body>
+
+   <header class="header">
+
+   </header>
+
+   <div class="sidebar">
+
+   </div>
+
+   <main>
+      <section class="contact">		  
+         <h1>Lista de Mensagens</h1>
+        	<div class="row">
+			<div class="col-sm-12">
+				<table class="table table-striped blue">
+					<thead>
+						<tr>
+							<th scope="col">ID</th>
+							<th scope="col">Nome</th>
+							<th scope="col">Email</th>
+							<th scope="col">Telefone</th>
+							<th scope="col">Mensagem</th>
+							<th scope="col">Ações</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each="contato : ${contatos}">
+							<th scope="row" th:text="${contato.id}"></th>
+							<td th:text="${contato.nome}"></td>
+							<td th:text="${contato.email}"></td>
+							<td th:text="${contato.telefone}"></td>
+							<td th:text="${contato.mensagem}"></td>
+							<td>
+								<a th:href="@{/contato/{id}/editar (id=${contato.id})}" class="btn btn-orange">
+									Editar							
+								</a>
+							
+								<a th:href="@{/contato/{id}/excluir (id=${contato.id})}" class="btn btn-red"
+									onclick="return confirm('Tem certeza que deseja excluir o contato?');">
+									Excluir
+								</a>
+							</td>	
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+ 
+		<div class="col-sm-12 text-center">
+    		<div class="d-inline-block">
+        		<a th:href="@{/contato/contato}" class="btn btn-dark-blue btn-sm mr-2">Enviar nova mensagem</a>
+        		<button onclick="goBack()" class="btn btn-ligth btn-sm">Voltar</button>
+    		</div>
+		</div>
+      </section>
+   </main>
+   <!-- FOOTER -->
+
+   <footer>
+   </footer>
+
+   <!-- FOOTER -->
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+      crossorigin="anonymous"></script>      
+   <script>
+      function goBack() {
+         window.location.href = "/";
+      }
+   </script>
+   <script src="/js/contato.js" type="module"></script>
+   <script src="/js/functions.js" defer></script>
+</body>
+
+</html>

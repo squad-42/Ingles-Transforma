@@ -8,7 +8,6 @@
   color: var(--dark-blue);
   background-color: transparent;
 }
-
 .btn-red {
   background-color: hsl(6, 78%, 57%);
   color: var(--white);
@@ -26,6 +25,16 @@
 .btn-orange:hover {
   border: 1px solid hsl(37, 90%, 51%);
   color: hsl(37, 90%, 51%);
+  background-color: transparent;
+}
+
+.btn-ligth {
+  background-color: var(--light-color);
+  color: var(--white);
+}
+.btn-light:hover {
+  border: 1px solid var(--light-color);
+  color: var(--light-color);
   background-color: transparent;
 }
 
