@@ -22,7 +22,7 @@ profileDetails.innerHTML = `
           <img src="../../assets/imgs/pic-${userPic}.jpg" alt="">
           <h3>${name}</h3>
           <p class="text-capitalize">${type}</p>
-          <a href="../update/update.html" class="btn btn-dark-blue">Editar perfil</a>
+          <a href="/update" class="btn btn-dark-blue">Editar perfil</a>
         </div>
 
         <div class="box-container">
@@ -77,7 +77,7 @@ const cardCursoProf = ({ numOfVid, course, thumb }) => {
         <a href="" class="btn btn-orange">Editar</a>
         <a href="" class="btn btn-red">Deletar</a>
       </div>
-      <a href="../aulas/aulas.html" class="btn btn-dark-blue" style="width: 100%;">Ver playlist</a>
+      <a href="/aulas" class="btn btn-dark-blue" style="width: 100%;">Ver playlist</a>
     </div>
   `
 }

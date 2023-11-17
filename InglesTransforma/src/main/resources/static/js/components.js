@@ -13,18 +13,18 @@ const profile = (user, location) => {
     <img src="../../assets/imgs/pic-${user.userPic}.jpg" alt="Foto de Perfil" class="object-fit-cover">
     <h3 class="name">${user.name}</h3>
     <p class="role text-capitalize">${user.type}</p>
-    <a href="../usuario/usuario" class="btn d-block w-100 btn-dark-blue">Ver perfil</a>
+    <a href="/usuario" class="btn d-block w-100 btn-dark-blue">Ver perfil</a>
     ${location === "header" ? `
         <div class="d-flex gap-3 mt-3">
-          <a href="../home/index" class="btn btn-orange" onclick="logout()">Logout</a>
+          <a href="" class="btn btn-orange" onclick="logout()">Logout</a>
         </div>      
       ` : ``
     }
 ` : `
     <h3 class="name">Por favor logar ou registrar</h3>
     <div class="d-flex gap-3 mt-3">
-      <a href="../login/login" class="btn btn-orange">Login</a>
-      <a href="../cadastro/cadastro" class="btn btn-orange">Registrar</a>
+      <a href="/login" class="btn btn-orange">Login</a>
+      <a href="/cadastro" class="btn btn-orange">Registrar</a>
     </div>
 `
 }
@@ -34,7 +34,7 @@ export const navbar = () => {
   return `
   <section class="d-flex align-items-center justify-content-between position-relative section-header">
 
-      <a href="../home/index" class="logo">
+      <a href="/" class="logo">
         <img src="../../assets/icons/logo-texto.svg" alt="Logotipo" width="80" id="logo">
       </a>
 
@@ -61,7 +61,7 @@ export const sidebar = () => {
   let links = ""
   menuItens.map(({ icon, label, link }) => {
     links += `
-  <a href="../${link}/${link === "home" ? "index" : link}"><i class="fas fa-${icon}"></i><span>${label}</span></a>
+  <a href="/${link === "home" ? "" : link}"><i class="fas fa-${icon}"></i><span>${label}</span></a>
   `
   })
   if (user !== null) {
@@ -108,7 +108,7 @@ export const cardCurso = ({ cod, prof, profPic, date, numOfVid, thumb, course })
     <span>${numOfVid} videos</span>
   </div>
   <h3 class="title">${course}</h3>
-  <a href="../aulas/aulas" class="btn btn-dark-blue" onclick="setCurso(${cod})">ver playslist</a>
+  <a href="/aulas" class="btn btn-dark-blue" onclick="setCurso(${cod})">ver playslist</a>
 </div>
   `
 }

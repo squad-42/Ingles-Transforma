@@ -6,12 +6,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
-@RequestMapping("/pages/quem-somos/quem-somos")
+@RequestMapping("/quem-somos")
 public class QuemSomosController {
 	
 	@GetMapping
 	public ModelAndView mostrar() {
-		ModelAndView page = new ModelAndView();
+		ModelAndView page = new ModelAndView("/pages/quem-somos/quem-somos");
 		return page;
 	}
 }

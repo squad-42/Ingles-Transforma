@@ -50,7 +50,7 @@ playlistDetails.innerHTML = `
 
 for (let i = 1; i <= numOfVid; i++) {
   videosSection.innerHTML += `
-       <a href="../videoaula/videoaula" onclick="setClass(${i})" class="box">
+       <a href="/videoaula" onclick="setClass(${i})" class="box">
           <i class="fas fa-play"></i>
           <img src="../../assets/imgs/thumb-${thumb}.png" alt="">
           <span>Aula ${i}</span>
