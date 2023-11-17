@@ -31,24 +31,33 @@
 
   <main>
     <section class="form-container">
-      <form action="../home/index" id="form">
+      <form method="post" th:object="${usuario}" enctype="multipart/form-data" id="form">
         <h3>Cadastrar</h3>
-        <label>Nome <span>*</span></label>
-        <input type="text" placeholder="Harry Potter" maxlength="100" class="box" id="name" required>
-        <label>Email <span>*</span></label>
-        <input type="email" placeholder="hp@email.com" maxlength="100" class="box" id="email" required>
-        <label>Tipo <span>*</span></label>
-        <select class="box" id="type" required>
+        <select class="box" th:field="*{user_role}" required>
           <option value="aluno">Aluno(a)</option>
           <option value="professor">Professor(a)</option>
         </select>
+        <label>Nome <span>*</span></label>
+        <input type="text" placeholder="Harry Potter" maxlength="100" class="box" th:field="*{nome}" required>
+        <label>Email <span>*</span></label>
+        <input type="email" placeholder="hp@email.com" maxlength="100" class="box" th:field="*{email}" required>
+        <label>CPF <span>*</span></label>
+        <input type="text" placeholder="CPF" maxlength="100" class="box" th:field="*{cpf}" required>
+        <label>Data de Nascimento <span>*</span></label>
+        <input type="date" class="box" th:field="*{data_de_nascimento}" required>
+        <label>Sexo <span>*</span></label>
+        <select class="box" th:field="*{sexo}" required>
+          <option value="masculino">Masculino</option>
+          <option value="feminino">Feminino</option>
+          <option value="nao_binario">Não Binário</option>
+        </select>
         <label>Senha <span>*</span></label>
         <input type="password" minlength="6" placeholder="Digite sua nova senha" maxlength="50" class="box"
-          id="password" required>
+          th:field="*{senha}" required>
         <label>Confirmar senha <span>*</span></label>
         <input type="password" minlength="6" placeholder="Confirme sua senha" maxlength="50" class="box"
           id="confPassword" required>
-        <button type="submit" class="btn btn-dark-blue" id="btnSignUp">Confirmar</button>
+        <button class="btn btn-dark-blue" id="btnSignUp">Confirmar</button>
       </form>
     </section>
 

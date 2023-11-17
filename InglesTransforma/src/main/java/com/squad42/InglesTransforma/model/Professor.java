@@ -2,6 +2,9 @@ package com.squad42.InglesTransforma.model;
 
 import java.util.Date;
 
+import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.format.annotation.DateTimeFormat.ISO;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -27,6 +30,7 @@ public class Professor {
 	@Column(nullable=false)
 	private String user_role;
 	@Column(nullable=false)
+	@DateTimeFormat(iso = ISO.DATE, pattern = "yyyy-MM-dd")
 	private Date data_de_nascimento;
 	@Column(nullable=false)
 	private String sexo;
