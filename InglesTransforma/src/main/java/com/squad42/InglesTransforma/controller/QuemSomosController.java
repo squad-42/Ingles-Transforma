@@ -11,7 +11,7 @@ public class QuemSomosController {
 	
 	@GetMapping
 	public ModelAndView mostrar() {
-		ModelAndView page = new ModelAndView("/pages/quem-somos/quem-somos");
+		ModelAndView page = new ModelAndView("quem-somos/quem-somos");
 		return page;
 	}
 }

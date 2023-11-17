@@ -10,7 +10,7 @@ console.log(user)
 const profile = (user, location) => {
   return user !== null ?
     `
-    <img src="../../assets/imgs/pic-${user.userPic}.jpg" alt="Foto de Perfil" class="object-fit-cover">
+    <img src="../img/imgs/pic-${user.userPic}.jpg" alt="Foto de Perfil" class="object-fit-cover">
     <h3 class="name">${user.name}</h3>
     <p class="role text-capitalize">${user.type}</p>
     <a href="/usuario" class="btn d-block w-100 btn-dark-blue">Ver perfil</a>
@@ -34,8 +34,8 @@ export const navbar = () => {
   return `
   <section class="d-flex align-items-center justify-content-between position-relative section-header">
 
-      <a href="/" class="logo">
-        <img src="../../assets/icons/logo-texto.svg" alt="Logotipo" width="80" id="logo">
+      <a href="" class="logo">
+        <img src="../img/icons/logo-texto.svg" alt="Logotipo" width="80" id="logo">
       </a>
 
       <form action="" method="post" class="d-flex align-content-center search-form">
@@ -97,14 +97,14 @@ export const cardCurso = ({ cod, prof, profPic, date, numOfVid, thumb, course })
   return `
   <div class="box">
   <div class="tutor">
-    <img src="../../assets/imgs/pic-${profPic}.jpg" alt="">
+    <img src="../img/imgs/pic-${profPic}.jpg" alt="">
     <div class="info">
       <h3>${prof}</h3>
       <span>${date}</span>
     </div>
   </div>
   <div class="thumb">
-    <img src="../../assets/imgs/thumb-${thumb}.png" alt="">
+    <img src="../img/imgs/thumb-${thumb}.png" alt="">
     <span>${numOfVid} videos</span>
   </div>
   <h3 class="title">${course}</h3>
