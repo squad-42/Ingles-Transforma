@@ -32,7 +32,7 @@ public class Aluno {
 	@Column(nullable=false)
 	private String user_role;
 	@Column(nullable=false)
-	@DateTimeFormat(iso = ISO.DATE, pattern = "dd/MM/yyyy")
+	@DateTimeFormat(iso = ISO.DATE, pattern = "yyyy-MM-dd")
 
 	private Date data_de_nascimento;
 	@Column(nullable=false)
