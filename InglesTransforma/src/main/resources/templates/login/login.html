@@ -30,12 +30,12 @@
 
   <main>
     <section class="form-container">
-      <form action="../home/index.html" id="form">
+      <form action="/login" method="post" id="form">
         <h3>Login</h3>
         <label>Email</label>
-        <input type="email" placeholder="hp@email.com" maxlength="100" class="box" id="inpEmail" required>
+        <input type="email" placeholder="hp@email.com" maxlength="100" class="box" id="inpEmail" name="email" required>
         <label>Senha</label>
-        <input type="password" placeholder="Digite sua nova senha" maxlength="50" class="box" id="inpPassword" required>
+        <input type="password" placeholder="Digite sua nova senha" maxlength="50" class="box" name="senha" id="inpPassword" required>
         <button type="submit" class="btn btn-dark-blue" id="btnLogin">Login</button>
       </form>
     </section>
