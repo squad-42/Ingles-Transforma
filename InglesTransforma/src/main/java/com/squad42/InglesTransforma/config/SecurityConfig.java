@@ -13,7 +13,9 @@ public class SecurityConfig {
 	@Bean
 	SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
 		http. authorizeHttpRequests().anyRequest().permitAll();
+		 http .csrf().disable(); // Disable CSRF (Cross-Site Request Forgery) protection for simplicity
 		return http.build();
 	}
+	
 
 }
