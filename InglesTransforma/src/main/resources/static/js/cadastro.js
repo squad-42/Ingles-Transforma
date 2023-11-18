@@ -18,7 +18,7 @@ header.innerHTML = navbar()
 menu.innerHTML = sidebar()
 footer.innerHTML = footerComponent(footer)
 
-btnSignUp.addEventListener("click", () => {
+btnSignUp.addEventListener("click", (e) => {
   if (password.value === confPassword.value) {
     const user = {
       id: users.length + 1,
@@ -28,8 +28,11 @@ btnSignUp.addEventListener("click", () => {
       password: password.value,
       userPic: 1,
     }
+	}else{
+		e.preventDefault()
+	}
     users.push(user)
     localStorage.setItem("users", JSON.stringify(users))
     console.log("Cadastrado")
   }
-})
+)

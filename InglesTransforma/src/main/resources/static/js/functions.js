@@ -52,7 +52,7 @@ function enableDarkMode() {
   localStorage.setItem("dark-mode", "true")
   body.classList.add("dark")
   offcanvas.classList.add("text-bg-dark")
-  logo.src = "../img/icons/logo-texto-branco.svg"
+  logo.src = "../../assets/icons/logo-texto-branco.svg"
 }
 
 function disableDarkMode() {
@@ -60,7 +60,7 @@ function disableDarkMode() {
   localStorage.setItem("dark-mode", "false")
   body.classList.remove("dark")
   offcanvas.classList.remove("text-bg-dark")
-  logo.src = "../img/icons/logo-texto.svg"
+  logo.src = "../../assets/icons/logo-texto.svg"
 }
 
 

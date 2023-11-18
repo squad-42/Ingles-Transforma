@@ -14,7 +14,7 @@ cardSection.innerHTML += `
                   <div class="main">
                       <div class="service">
                          <div class="service-logo">
-                            <img src="../img/imgs/${img}.png" alt="">
+                            <img src="/../assets/imgs/${img}.png" alt="">
                           </div>
                           <h4>${title}</h4>
                           <p>${text}</p>

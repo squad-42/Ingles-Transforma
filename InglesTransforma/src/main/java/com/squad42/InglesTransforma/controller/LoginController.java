@@ -29,7 +29,7 @@ public class LoginController {
 	
 	@PostMapping
 	public ModelAndView login(String email, String senha) {
-		ModelAndView page = new ModelAndView("redirect:/");
+		ModelAndView page = new ModelAndView("/pages/home/index");
 		
 		Aluno aluno = ar.findByEmail(email);
 		
