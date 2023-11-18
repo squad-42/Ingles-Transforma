@@ -34,9 +34,9 @@ public class ContatoController {
 	}
  
 	// chama a view cadastrar e passa um objeto vazio
-	@GetMapping("/contato")
+	@GetMapping
 	public ModelAndView cadastrar() {
-		ModelAndView modelAndView = new ModelAndView("contato/contato.html");
+		ModelAndView modelAndView = new ModelAndView("/pages/contato/contato");
  
 		modelAndView.addObject("contato", new Contato());
  

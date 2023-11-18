@@ -56,7 +56,7 @@ export const sidebar = () => {
   let links = ""
   menuItens.map(({ icon, label, link }) => {
     links += `
-  <a href="../${link}/${link === "home" ? "index" : link}"><i class="fas fa-${icon}"></i><span>${label}</span></a>
+ <a href="/${link === "home" ? "" : link}"><i class="fas fa-${icon}"></i><span>${label}</span></a>
   `
   })
   if (user !== null) {
