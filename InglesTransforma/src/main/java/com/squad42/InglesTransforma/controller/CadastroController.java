@@ -1,6 +1,7 @@
 package com.squad42.InglesTransforma.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -23,6 +24,9 @@ public class CadastroController {
 	@Autowired 
 	private ProfessorRepository pr;
 	
+	 @Autowired
+	    private PasswordEncoder passwordEncoder;
+	
 	@GetMapping
 	public ModelAndView mostrar() {
 		ModelAndView page = new ModelAndView("/pages/cadastro/cadastro");
@@ -37,7 +41,8 @@ public class CadastroController {
 			Aluno aluno = new Aluno();
 			aluno.setNome(usuario.getNome());
 			aluno.setEmail(usuario.getEmail());
-			aluno.setSenha(usuario.getSenha());
+			String hashedPassword = passwordEncoder.encode(usuario.getSenha());
+			aluno.setSenha(hashedPassword);
 			aluno.setCpf(usuario.getCpf());
 			aluno.setUser_role(usuario.getUser_role());
 			aluno.setData_de_nascimento(usuario.getData_de_nascimento());
@@ -47,7 +52,8 @@ public class CadastroController {
 			Professor professor = new Professor();
 			professor.setNome(usuario.getNome());
 			professor.setEmail(usuario.getEmail());
-			professor.setSenha(usuario.getSenha());
+			String hashedPassword = passwordEncoder.encode(usuario.getSenha());
+			professor.setSenha(hashedPassword);
 			professor.setCpf(usuario.getCpf());
 			professor.setUser_role(usuario.getUser_role());
 			professor.setData_de_nascimento(usuario.getData_de_nascimento());

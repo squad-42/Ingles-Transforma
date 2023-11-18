@@ -5,6 +5,7 @@ import java.util.Date;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.format.annotation.DateTimeFormat.ISO;
 
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -81,7 +82,7 @@ public class Aluno {
 		return senha;
 	}
 	public void setSenha(String senha) {
-		this.senha = senha;
+		    this.senha = senha;
 	}
 	public String getCpf() {
 		return cpf;
