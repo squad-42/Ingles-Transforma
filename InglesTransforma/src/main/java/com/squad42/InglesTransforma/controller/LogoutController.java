@@ -8,13 +8,13 @@ import org.springframework.web.servlet.ModelAndView;
 import jakarta.servlet.http.HttpSession;
 
 @Controller
-@RequestMapping("/aulas")
-public class AulasController {
-	
+@RequestMapping("/logout")
+public class LogoutController {
 	@GetMapping
-	public ModelAndView mostrar(HttpSession session) {
-		ModelAndView page = new ModelAndView("/pages/aulas/aulas");
-		page.addObject("usuario", session.getAttribute("usuario"));
+	public ModelAndView deslogar(HttpSession session) {
+		ModelAndView page = new ModelAndView("redirect:/");
+		session.setAttribute("usuario", null);
 		return page;
+	
 	}
 }

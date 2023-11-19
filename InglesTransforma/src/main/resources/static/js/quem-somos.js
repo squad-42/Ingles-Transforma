@@ -5,7 +5,6 @@ const menu=document.querySelector(".sidebar")
 const cardSection=document.querySelector(".row")
 const footer=document.querySelector("footer")
 
-header.innerHTML=navbar()
 menu.innerHTML=sidebar()
 footer.innerHTML=footerComponent(footer)
 sobreCards.map(({img,title,text})=>{

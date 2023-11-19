@@ -11,7 +11,6 @@ const codCurso = localStorage.getItem("codCurso")
 const { prof, profPic, thumb, date, course, numOfVid } = courses.find((course) => course.cod === codCurso)
 
 
-header.innerHTML = navbar()
 menu.innerHTML = sidebar()
 footer.innerHTML = footerComponent(footer)
 

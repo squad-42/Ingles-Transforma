@@ -10,7 +10,6 @@ const footer = document.querySelector("footer")
 
 const { name, userPic, type } = user
 
-header.innerHTML = navbar()
 menu.innerHTML = sidebar()
 footer.innerHTML = footerComponent(footer)
 

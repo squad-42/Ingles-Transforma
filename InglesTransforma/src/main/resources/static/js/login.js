@@ -12,7 +12,6 @@ const btnLogin = form.querySelector("#btnLogin")
 
 const users = JSON.parse(localStorage.getItem("users")) || []
 
-header.innerHTML = navbar()
 menu.innerHTML = sidebar()
 footer.innerHTML = footerComponent(footer)
 

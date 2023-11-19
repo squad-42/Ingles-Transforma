@@ -7,7 +7,6 @@ const footer = document.querySelector("footer")
 const quickOptionsSections = document.querySelectorAll(".cards-options")
 const coursesSection = document.querySelector("#courses .box-container")
 
-header.innerHTML = navbar()
 menu.innerHTML = sidebar()
 footer.innerHTML = footerComponent(footer)
 

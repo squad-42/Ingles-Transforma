@@ -68,9 +68,6 @@ export const sidebar = () => {
   }
   return `
   <div class="offcanvas offcanvas-start" tabindex="-1" id="sidebar">
-    <div class="profile text-center" id="profile-sidebar">
-      ${profile(user, "sidebar")}
-    </div>
     <nav class="navbar d-flex flex-column align-items-start justify-content-around ">
     ${links}
     </nav>

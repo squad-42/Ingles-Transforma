@@ -1,5 +1,5 @@
 import { footerComponent, navbar, sidebar } from "./components.js";
-import { courses } from "../../scripts/data.js";
+import { courses } from "./data.js";
 
 const header = document.querySelector("header")
 const menu = document.querySelector(".sidebar")
@@ -9,7 +9,6 @@ const coursesSection = document.querySelector(".box-container")
 
 const codCurso = localStorage.getItem("codCurso")
 
-header.innerHTML = navbar()
 menu.innerHTML = sidebar()
 footer.innerHTML = footerComponent(footer)
 

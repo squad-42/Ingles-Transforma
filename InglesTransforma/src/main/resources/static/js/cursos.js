@@ -6,7 +6,6 @@ const menu = document.querySelector(".sidebar")
 const footer = document.querySelector("footer")
 const cursosSection = document.querySelector("#courses .box-container")
 
-header.innerHTML = navbar()
 menu.innerHTML = sidebar()
 footer.innerHTML = footerComponent(footer)
 

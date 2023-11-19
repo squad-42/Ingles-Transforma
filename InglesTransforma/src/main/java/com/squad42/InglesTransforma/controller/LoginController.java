@@ -5,6 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.squad42.InglesTransforma.model.Aluno;
@@ -12,8 +13,11 @@ import com.squad42.InglesTransforma.model.Professor;
 import com.squad42.InglesTransforma.repository.AlunoRepository;
 import com.squad42.InglesTransforma.repository.ProfessorRepository;
 
+import jakarta.servlet.http.HttpSession;
+
 @Controller
 @RequestMapping("/login")
+@SessionAttributes("usuario")
 public class LoginController {
 	@Autowired
 	private AlunoRepository ar;
@@ -28,7 +32,7 @@ public class LoginController {
 	}
 	
 	@PostMapping
-	public ModelAndView login(String email, String senha) {
+	public ModelAndView login(String email, String senha, HttpSession session) {
 		ModelAndView page = new ModelAndView("/pages/home/index");
 		
 		Aluno aluno = ar.findByEmail(email);
@@ -40,7 +44,7 @@ public class LoginController {
 		}else {
 			if(aluno != null) {
 				if(aluno.getSenha().equals(senha)) {
-					page.addObject("usuario", aluno);
+					session.setAttribute("usuario", aluno);
 					System.out.println(aluno.getNome());
 				}else {
 					System.out.println("Email ou senha incorretos");
@@ -48,7 +52,7 @@ public class LoginController {
 			}
 			if(professor != null) {
 				if(professor.getSenha().equals(senha)) {
-					page.addObject("usuario", professor);
+					session.setAttribute("usuario", professor);
 					System.out.println(professor.getNome());
 				}else {
 					System.out.println("Email ou senha incorretos");
