@@ -47,7 +47,8 @@
         <div th:if="${usuario != null}">
 	        <h3 class="name" th:text="${usuario.nome}"></h3>
 	        <p class="role text-capitalize" th:text="${usuario.user_role}"></p>
-		   	<a href="/usuario" class="btn d-block w-100 btn-dark-blue">Ver perfil</a>
+		  <a href="/usuario" class="btn d-block w-100 btn-dark-blue" th:if="${usuario.user_role == 'aluno'}">Ver perfil</a>
+		   	<a href="/professor" class="btn d-block w-100 btn-dark-blue" th:if="${usuario.user_role == 'professor'}">Ver perfil</a>
 		   	<div class="d-flex gap-3 mt-3">
           		<a href="/logout" class="btn btn-orange">Logout</a>
         	</div>
