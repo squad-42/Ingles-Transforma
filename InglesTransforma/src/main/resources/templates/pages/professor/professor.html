@@ -17,7 +17,7 @@
 <body>
   <!-- NAVBAR -->
   <header>
-	   <section class="d-flex align-items-center justify-content-between position-relative section-header">
+	  <section class="d-flex align-items-center justify-content-between position-relative section-header">
 
       <a href="/" class="logo">
         <img src="../../assets/icons/logo-texto.svg" alt="Logotipo" width="80" id="logo">
@@ -47,8 +47,7 @@
         <div th:if="${usuario != null}">
 	        <h3 class="name" th:text="${usuario.nome}"></h3>
 	        <p class="role text-capitalize" th:text="${usuario.user_role}"></p>
-		<a href="/usuario" class="btn d-block w-100 btn-dark-blue" th:if="${usuario.user_role == 'aluno'}">Ver perfil</a>
-		   	<a href="/professor" class="btn d-block w-100 btn-dark-blue" th:if="${usuario.user_role == 'professor'}">Ver perfil</a>
+		   	<a href="/usuario" class="btn d-block w-100 btn-dark-blue">Ver perfil</a>
 		   	<div class="d-flex gap-3 mt-3">
           		<a href="/logout" class="btn btn-orange">Logout</a>
         	</div>
@@ -71,16 +70,85 @@
     </section>
 
     <div class="details">
-
+		<div class="tutor">
+	        <img src="/assets/imgs/pic-1.jpg" alt="">
+	        <h3 th:text="${usuario.nome}"></h3>
+	        <span th:text="${usuario.user_role}" class="text-capitalize"></span>
+	      </div>
     </div>
 
     <section class="container" id="courses">
       <h2 class="heading">Cursos</h2>
 
       <div class="box-container">
+		  <div class="box" style="height: fit-content;">
+            <h3 class="title text-center">Adicionar nova playlist</h3>
+            <button class="btn btn-dark-blue" data-bs-target="#criarCurso" th:data-bs-toggle="modal" style="width: 100%;">Adicionar</button>
+          </div>
       </div>
 
     </section>
+    
+    <section class="box-container">
+		<div th:each="curso: ${cursos}" class="box">
+	      <div class="tutor">
+	      </div>
+	      <div class="thumb">
+	        <img src="/assets/imgs/thumb-1.png" alt="">
+	        <span th:text="${curso.quantidade_de_aulas} + ' videos'">videos</span>
+	      </div>
+	      <h3 class="title" th:text="${curso.nome}"></h3>
+	      <div class="d-flex gap-2 mb-2">
+	        <a href="" class="btn btn-orange">Editar</a>
+	        <a href="" class="btn btn-red">Deletar</a>
+	      </div>
+	      <a href="/aulas" class="btn btn-dark-blue" style="width: 100%;">Ver playlist</a>
+	    </div>
+	</section>
+
+
+<div class="modal fade" id="criarCurso" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Adicionar curso</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+		<form method="post" enctype="multipart/form-data" th:object="${novoCurso}">
+		<input class="form-control" id="nomeCurso" th:value="${usuario.id}" th:field="*{professor}" hidden>
+			
+      <div class="mb-3">
+		    <label for="nomeCurso" class="form-label">Nome do curso</label>
+		    <input class="form-control" id="nomeCurso" th:field="*{nome}">
+	  </div>
+	  
+      <div class="mb-3">
+		    <label for="qtdAulas" class="form-label">Quantidade de aulas</label>
+		    <input class="form-control" id="qtdAulas" th:field="*{quantidade_de_aulas}">
+	  </div>
+	  
+      <div class="modal-body">
+          <div class="mb-3">
+		    <label for="data_criacao" class="form-label">Data de criação</label>
+		    <input type="date" class="form-control" id="data_criacao" th:field="*{data_de_nascimento}">
+	  </div>
+      <div class="modal-body">
+          <div class="mb-3">
+		    <label for="data_fechamento" class="form-label">Data de fechamento</label>
+		    <input type="date" class="form-control" id="data_fechamento" th:field="*{data_de_fechamento}">
+	  </div>
+
+      </div>
+      <div class="d-flex p-2 gap-2">
+        <a href="" class="btn btn-secondary" data-bs-dismiss="modal"  style="width: 50%;">Cancelar</a>
+        <button class="btn btn-primary"  style="width: 50%;">Criar curso</button> 
+      </div>
+			
+		</form>
+    </div>
+  </div>
+</div>
 
 
 
