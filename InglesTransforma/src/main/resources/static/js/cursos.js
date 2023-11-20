@@ -9,6 +9,6 @@ const cursosSection = document.querySelector("#courses .box-container")
 menu.innerHTML = sidebar()
 footer.innerHTML = footerComponent(footer)
 
-courses.map((course) => {
-    cursosSection.innerHTML += cardCurso(course)
-})
+//courses.map((course) => {
+//    cursosSection.innerHTML += cardCurso(course)
+//})
