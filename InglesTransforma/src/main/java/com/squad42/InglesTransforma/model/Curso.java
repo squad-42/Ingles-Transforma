@@ -30,16 +30,16 @@ public class Curso {
 	private Date data_de_fechamento;
 	@Column(nullable=false)
 	@DateTimeFormat(iso = ISO.DATE, pattern = "yyyy-MM-dd")
-	private Date data_de_nascimento;
+	private Date data_de_publicacao;
 	public Curso(int id, Professor professor, String nome, int quantidade_de_aulas, Date data_de_fechamento,
-			Date data_de_nascimento) {
+			Date data_de_publicacao) {
 		super();
 		this.id = id;
 		this.professor = professor;
 		this.nome = nome;
 		this.quantidade_de_aulas = quantidade_de_aulas;
 		this.data_de_fechamento = data_de_fechamento;
-		this.data_de_nascimento = data_de_nascimento;
+		this.data_de_publicacao = data_de_publicacao;
 	}
 	public Curso() {
 		super();
@@ -74,11 +74,11 @@ public class Curso {
 	public void setData_de_fechamento(Date data_de_fechamento) {
 		this.data_de_fechamento = data_de_fechamento;
 	}
-	public Date getData_de_nascimento() {
-		return data_de_nascimento;
+	public Date getData_de_publicacao() {
+		return data_de_publicacao;
 	}
-	public void setData_de_nascimento(Date data_de_nascimento) {
-		this.data_de_nascimento = data_de_nascimento;
+	public void setData_de_publicacao(Date data_de_publicacao) {
+		this.data_de_publicacao = data_de_publicacao;
 	}
 
 	
