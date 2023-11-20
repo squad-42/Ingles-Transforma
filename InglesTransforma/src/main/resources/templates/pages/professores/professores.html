@@ -70,11 +70,22 @@
       <h1 class="heading">Professores</h1>
 
       <div class="box-container">
-        <div class="box offer">
-          <h3 class="title">Se torne um tutor</h3>
-          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laudantium, corporis?</p>
-          <a href="" class="btn btn-dark-blue">Começar</a>
-        </div>
+        <tr th:each="professor: ${professores}">
+			<div class="box">
+	          <div class="tutor">
+	            <img src="/assets/imgs/pic-1.jpg" alt="">
+	            <div class="info">
+	              <h3 class="title" th:text="${professor.nome}"></h3>
+	              <span th:text="${professor.data_de_nascimento}"></span>
+	            </div>
+	          </div>
+	          <div class="thumb">
+	            <img src="|/professores/imagem/${professor.id}|" alt="Imagem">
+	            <span th:text="${professor.email}"></span>
+	          </div>
+	        </div>
+			
+		</tr>
 
 
       </div>

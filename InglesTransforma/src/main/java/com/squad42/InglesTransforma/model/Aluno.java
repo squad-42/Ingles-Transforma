@@ -34,10 +34,13 @@ public class Aluno {
 	private String user_role;
 	@Column(nullable=false)
 	@DateTimeFormat(iso = ISO.DATE, pattern = "yyyy-MM-dd")
-
 	private Date data_de_nascimento;
+	
 	@Column(nullable=false)
 	private String sexo;
+
+	@Column(columnDefinition = "longblob")
+	private byte[] imagem;
 	public Aluno(int id, Curso curso, String nome, String email, String senha, String cpf, String user_role,
 			Date data_de_nascimento, String sexo) {
 		super();
@@ -109,5 +112,11 @@ public class Aluno {
 		this.sexo = sexo;
 	}
 	
-
+	public byte[] getImagem() {
+		return imagem;
+	}
+	public void setImagem(byte[] imagem) {
+		this.imagem = imagem;
+	}
+	
 }

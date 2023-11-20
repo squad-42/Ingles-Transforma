@@ -68,7 +68,12 @@
     <section class="profile">
       <h1 class="heading">Pefil</h1>
 
-      <div class="details">
+      <div class="details d-flex justify-content-center">
+		  <div class="tutor text-center">
+	        <img src="/assets/imgs/pic-1.jpg" alt="">
+	        <h3 th:text="${usuario.nome}"></h3>
+	        <span th:text="${usuario.user_role}" class="text-capitalize"></span>
+	      </div>
       </div>
 
 

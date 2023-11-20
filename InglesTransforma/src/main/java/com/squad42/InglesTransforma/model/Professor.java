@@ -35,6 +35,10 @@ public class Professor {
 	private Date data_de_nascimento;
 	@Column(nullable=false)
 	private String sexo;
+	
+	@Column(columnDefinition = "longblob")
+	private byte[] imagem;
+	
 	public Professor(int id, String nome, String email, String senha, String cpf, String user_role,
 			Date data_de_nascimento, String sexo) {
 		super();
@@ -97,6 +101,12 @@ public class Professor {
 	}
 	public void setSexo(String sexo) {
 		this.sexo = sexo;
+	}
+	public byte[] getImagem() {
+		return imagem;
+	}
+	public void setImagem(byte[] imagem) {
+		this.imagem = imagem;
 	}
 	
 	

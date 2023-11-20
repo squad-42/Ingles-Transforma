@@ -6,6 +6,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.squad42.InglesTransforma.model.Aluno;
@@ -35,7 +37,7 @@ public class CadastroController {
 	}
 	
 	@PostMapping
-	public ModelAndView cadastrar(Usuario usuario) {
+	public ModelAndView cadastrar(Usuario usuario, @RequestParam("foto") MultipartFile file) {
 		if(usuario.getUser_role().equals("aluno")) {
 			System.out.println("Aluno");
 			Aluno aluno = new Aluno();
@@ -47,6 +49,10 @@ public class CadastroController {
 			aluno.setUser_role(usuario.getUser_role());
 			aluno.setData_de_nascimento(usuario.getData_de_nascimento());
 			aluno.setSexo(usuario.getSexo());
+			try {
+				aluno.setImagem(file.getBytes());
+			} catch (Exception e) {
+			}
 			ar.save(aluno);
 		}else {
 			Professor professor = new Professor();
@@ -58,6 +64,10 @@ public class CadastroController {
 			professor.setUser_role(usuario.getUser_role());
 			professor.setData_de_nascimento(usuario.getData_de_nascimento());
 			professor.setSexo(usuario.getSexo());
+			try {
+				professor.setImagem(file.getBytes());
+			} catch (Exception e) {
+			}
 			pr.save(professor);		
 		}
 		ModelAndView page = new ModelAndView("redirect:/");
