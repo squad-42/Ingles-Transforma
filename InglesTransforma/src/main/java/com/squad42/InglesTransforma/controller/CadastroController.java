@@ -37,7 +37,7 @@ public class CadastroController {
 	}
 	
 	@PostMapping
-	public ModelAndView cadastrar(Usuario usuario, @RequestParam("foto") MultipartFile file) {
+	public ModelAndView cadastrar(Usuario usuario) {
 		if(usuario.getUser_role().equals("aluno")) {
 			System.out.println("Aluno");
 			Aluno aluno = new Aluno();
@@ -49,10 +49,7 @@ public class CadastroController {
 			aluno.setUser_role(usuario.getUser_role());
 			aluno.setData_de_nascimento(usuario.getData_de_nascimento());
 			aluno.setSexo(usuario.getSexo());
-			try {
-				aluno.setImagem(file.getBytes());
-			} catch (Exception e) {
-			}
+			
 			ar.save(aluno);
 		}else {
 			Professor professor = new Professor();
@@ -64,10 +61,7 @@ public class CadastroController {
 			professor.setUser_role(usuario.getUser_role());
 			professor.setData_de_nascimento(usuario.getData_de_nascimento());
 			professor.setSexo(usuario.getSexo());
-			try {
-				professor.setImagem(file.getBytes());
-			} catch (Exception e) {
-			}
+			
 			pr.save(professor);		
 		}
 		ModelAndView page = new ModelAndView("redirect:/");
