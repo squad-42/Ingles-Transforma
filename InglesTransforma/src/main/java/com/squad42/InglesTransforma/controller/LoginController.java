@@ -25,6 +25,7 @@ public class LoginController {
 	
 	@Autowired
 	private ProfessorRepository pr;
+	
 	@Autowired
 	private PasswordEncoder passwordEncoder;
 	
@@ -36,7 +37,8 @@ public class LoginController {
 	
 	@PostMapping
 	public ModelAndView login(String email, String senha, HttpSession session) {
-		ModelAndView page = new ModelAndView("/pages/home/index");
+		ModelAndView page = new ModelAndView("redirect:/");
+		
 		
 		Aluno aluno = ar.findByEmail(email);
 		
