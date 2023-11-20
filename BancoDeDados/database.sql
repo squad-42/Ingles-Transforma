@@ -12,6 +12,7 @@ CREATE TABLE Professores (
     cpf varchar(255),
     user_role varchar(255),
     data_de_nascimento varchar(255),
+    imagem BLOB,
     sexo varchar(255)
 );
 
@@ -74,3 +75,12 @@ ALTER TABLE Comentários ADD CONSTRAINT FK_Comentários_2
     FOREIGN KEY (id_aluno)
     REFERENCES Alunos (id_aluno)
     ON DELETE CASCADE;
+
+ALTER TABLE Professores
+ADD image BLOB;
+
+ALTER TABLE Cursos
+ADD image BLOB;
+
+ALTER TABLE Alunos
+ADD image BLOB;
