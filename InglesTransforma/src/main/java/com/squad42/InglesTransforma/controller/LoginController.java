@@ -1,6 +1,7 @@
 package com.squad42.InglesTransforma.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -24,6 +25,8 @@ public class LoginController {
 	
 	@Autowired
 	private ProfessorRepository pr;
+	@Autowired
+	private PasswordEncoder passwordEncoder;
 	
 	@GetMapping
 	public ModelAndView mostrar() {
@@ -43,7 +46,7 @@ public class LoginController {
 			System.out.println("Email ou senha incorretos");
 		}else {
 			if(aluno != null) {
-				if(aluno.getSenha().equals(senha)) {
+				if(passwordEncoder.matches(senha,aluno.getSenha())) {
 					session.setAttribute("usuario", aluno);
 					System.out.println(aluno.getNome());
 				}else {
@@ -51,7 +54,7 @@ public class LoginController {
 				}
 			}
 			if(professor != null) {
-				if(professor.getSenha().equals(senha)) {
+				if(passwordEncoder.matches(senha,professor.getSenha())) {
 					session.setAttribute("usuario", professor);
 					System.out.println(professor.getNome());
 				}else {
