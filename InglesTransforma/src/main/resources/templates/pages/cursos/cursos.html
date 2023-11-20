@@ -61,8 +61,16 @@
     <!-- CURSOS -->
     <section class="container" id="courses">
       <h2 class="heading">Nossos Cursos</h2>
-
-      <div class="box-container">
+      <div th:each="curso:${cursos}" class="box-container">
+		   <div class="box">
+			  
+			  <div class="thumb">
+			    <img src="/assets/imgs/thumb-1.png" alt="">
+			    <span th:text="${curso.quantidade_de_aulas}+' videos'" ></span>
+			  </div>
+			  <h3 class="title" th:text="${curso.nome}" ></h3>
+			  <a href="/aulas" class="btn btn-dark-blue" onclick="setCurso(${cod})">ver playslist</a>
+			</div>
       </div>
     </section>
     <!-- CURSOS -->
